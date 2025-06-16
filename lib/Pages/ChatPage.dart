@@ -1,3 +1,4 @@
+import 'package:chat_app/CustomUI/CustomCard.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -18,6 +19,12 @@ class _ChatPageState extends State<ChatPage> {
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         child: Icon(Icons.chat),
+      ),
+      body: ListView(
+        children: [
+          CustomCard(),
+          CustomCard(),
+        ],
       ),
     );
   }
