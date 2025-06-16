@@ -55,8 +55,8 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
         ],
         bottom: TabBar(
           controller: _controller,
-          indicatorColor: Theme.of(context).colorScheme.secondary,
-          labelColor: Theme.of(context).colorScheme.secondary,
+          indicatorColor: Colors.white,
+          labelColor: Colors.white,
           tabs: [
             Tab(icon: Icon(Icons.camera_alt)),
             Tab(text: "CHATS"),

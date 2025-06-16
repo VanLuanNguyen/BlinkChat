@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
 Widget build(BuildContext context) {
   return MaterialApp(
     theme: ThemeData(
+      fontFamily: 'OpenSans',
       primaryColor: Color(0xFF075E54),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         secondary: Color(0xFF25D366),

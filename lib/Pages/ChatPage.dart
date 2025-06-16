@@ -15,6 +15,8 @@ class _ChatPageState extends State<ChatPage> {
         onPressed: () {
           // Action for the floating action button
         },
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
         child: Icon(Icons.chat),
       ),
     );
