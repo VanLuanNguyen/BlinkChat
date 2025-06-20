@@ -175,7 +175,13 @@ class _IndividualPageState extends State<IndividualPage> {
                                   children: [
                                     IconButton(
                                       icon: Icon(Icons.attach_file),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        showModalBottomSheet(
+                                          backgroundColor: Colors.transparent,
+                                          context: context, 
+                                          builder: (builder) => bottomSheet()
+                                          );
+                                      },
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.camera_alt_outlined),
@@ -221,6 +227,69 @@ class _IndividualPageState extends State<IndividualPage> {
             return Future.value(false);
           },
         ),
+      ),
+    );
+  }
+
+  Widget bottomSheet() {
+    return Container(
+      height: 270,
+      width: MediaQuery.of(context).size.width,
+      child: Card(
+        margin: EdgeInsets.all(18),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Column(
+            children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    iconcreation(Icons.insert_drive_file, Colors.indigo, "Document"),
+                    SizedBox(width: 40),
+                    iconcreation(Icons.camera_alt, Colors.pink, "Camera"),
+                    SizedBox(width: 40),
+                    iconcreation(Icons.insert_photo, Colors.purple, "Gallery"),
+                  ],
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    iconcreation(Icons.headset, Colors.orange, "Audio"),
+                    SizedBox(width: 40),
+                    iconcreation(Icons.location_pin, Colors.teal, "Location"),
+                    SizedBox(width: 40),
+                    iconcreation(Icons.person, Colors.blue, "Contact"),
+                  ],
+                )
+            ]
+          ),
+        ),
+      )
+    );
+  }
+
+  Widget iconcreation(IconData icon,Color color, String text) {
+    return InkWell(
+      onTap: () {},
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color,
+            child: Icon(
+              icon,
+              size: 30,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 12,
+            ),
+          )
+        ],
       ),
     );
   }
