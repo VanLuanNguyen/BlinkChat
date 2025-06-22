@@ -1,5 +1,6 @@
 import 'package:chat_app/CustomUI/CustomCard.dart';
 import 'package:chat_app/Model/ChatModel.dart';
+import 'package:chat_app/Screens/SelectContact.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _ChatPageState extends State<ChatPage> {
       isGroup: false,
       time: "10:30 AM",
       currentMessage: "Hello, how are you?",
+      status: "Online",
     ),
     ChatModel(
       name: "Jane Smith",
@@ -24,6 +26,7 @@ class _ChatPageState extends State<ChatPage> {
       isGroup: false,
       time: "9:15 AM",
       currentMessage: "See you later!",
+      status: "Offline",
     ),
     ChatModel(
       name: "Group Chat",
@@ -31,6 +34,7 @@ class _ChatPageState extends State<ChatPage> {
       isGroup: true,
       time: "Yesterday",
       currentMessage: "Welcome to the group!",
+      status: "Active",
     ),
   ];
   @override
@@ -38,7 +42,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Action for the floating action button
+          Navigator.push(context, MaterialPageRoute(builder: (builder) => SelectContact()));
         },
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,

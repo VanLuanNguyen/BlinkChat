@@ -25,7 +25,7 @@ class CustomCard extends StatelessWidget {
             CircleAvatar(
               radius: 30,
               child: SvgPicture.asset(
-                chatModel.isGroup ? "assets/groups.svg" : "assets/person.svg",
+                (chatModel.isGroup ?? false) ? "assets/groups.svg" : "assets/person.svg",
                 height: 37,
                 width: 37,
               ),
@@ -43,7 +43,7 @@ class CustomCard extends StatelessWidget {
                 Icon(Icons.check, color: Colors.green, size: 16),
                 SizedBox(width: 3),
                 Text(
-                  chatModel.currentMessage,
+                  chatModel.currentMessage ?? '',
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 14,
@@ -52,7 +52,7 @@ class CustomCard extends StatelessWidget {
               ],
             ),
             trailing: Text(
-              chatModel.time,
+              chatModel.time ?? '',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 12,

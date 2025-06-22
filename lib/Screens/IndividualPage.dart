@@ -46,7 +46,7 @@ class _IndividualPageState extends State<IndividualPage> {
               CircleAvatar(
                 radius: 20,
                 child: SvgPicture.asset(
-                widget.chatModel.isGroup ? "assets/groups.svg" : "assets/person.svg",
+                (widget.chatModel.isGroup ?? false) ? "assets/groups.svg" : "assets/person.svg",
                 height: 35,
                 width: 35,
                 ),
